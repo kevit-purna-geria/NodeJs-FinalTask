@@ -38,13 +38,13 @@ class AttendanceController {
       
       const attendance = await Attendance.findOne({batch: batch, branch:branch, semester:semester, date:date});
       
-      // const absentees = attendance.data.forEach(element => {
-      //   element.status ==="absent"
-      // })
-      const data = attendance.data
       
-    
-      res.json(data);
+      const data = Object.values(attendance.data)
+      
+       
+      const absentElements = data.filter((element) => element["status"] === "absent");
+
+      res.json(absentElements);
 
     } catch (error) {
       res.status(500).json({ error: 'Failed to update Attendance Data' });
