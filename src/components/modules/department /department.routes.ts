@@ -16,4 +16,8 @@ router.post('/admin/department', async (req: Request, res: Response) => {
 //   attendanceController.AttendanceUpdate(req,res)
 // })
 
+router.get('/department/intake', async(req:Request, res:Response) =>{
+    departmentController.available(req, res)
+})
+
 export default router;

@@ -5,7 +5,8 @@ interface DepartmentDocument extends Document {
   branch: string;
   batch: number;
   totalStudentsIntake: number;
-  totalStudents:number
+  totalStudents:number;
+  availableIntake:number
 }
 
 const departmentSchema = new Schema<DepartmentDocument>({
@@ -25,6 +26,9 @@ const departmentSchema = new Schema<DepartmentDocument>({
   totalStudents: {
     type: Number,
     required:true
+  },
+  availableIntake :{
+    type: Number
   }
 });
 
