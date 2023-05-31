@@ -14,7 +14,7 @@ const logger = winston.createLogger({
 });
 
 const app: Express = express();
-const port: string | number = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
+const port: string | number = process.env.PORT ;
 
 import batchRouter from './components/modules/batch/batch.routes';
 import adminRouter from './components/modules/admin/admin.routes';

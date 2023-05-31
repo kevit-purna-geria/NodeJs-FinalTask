@@ -20,7 +20,7 @@ class AttendanceController {
     }
   }
   
-  async AttendanceUpdate(req: Request, res:Response) {
+  async attendanceUpdate(req: Request, res:Response) {
     try {
       const date = req.params.date.replace(':', '');
       
@@ -32,7 +32,7 @@ class AttendanceController {
     }
   }
 
-  async Absent(req: Request, res:Response) {
+  async absent(req: Request, res:Response) {
     try {
       const {batch, branch, semester, date} = req.body;
       

@@ -13,11 +13,11 @@ router.post('/staff/attendance', async (req: Request, res: Response) => {
 });
 
 router.put('/staff/attendance/:date', async(req :Request, res:Response) => {
-  attendanceController.AttendanceUpdate(req,res)
+  attendanceController.attendanceUpdate(req,res)
 })
 
 router.get('/attendance/absent', async(req:Request, res:Response) =>{
-  attendanceController.Absent(req, res)
+  attendanceController.absent(req, res)
 })
 
 export default router;
