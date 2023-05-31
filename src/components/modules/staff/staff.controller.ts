@@ -10,7 +10,7 @@ class StaffController {
   }
 
   generateToken(email: string): string {
-    const token = jwt.sign(email, 'Secret-key');
+    const token = jwt.sign(email, 'staff');
     return token;
   }
 

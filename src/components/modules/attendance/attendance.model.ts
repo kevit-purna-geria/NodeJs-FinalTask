@@ -4,6 +4,7 @@ import mongoose, { Document, Schema } from 'mongoose';
 interface AttendanceDocument extends Document {
   branch: string;
   batch: number;
+  semester:number;
   date: Date;
   data: []
 }
@@ -16,6 +17,10 @@ const attendanceSchema = new Schema<AttendanceDocument>({
   batch: {
     type: Number,
     required: true,
+  },
+  semester: {
+    type:Number,
+    required: true
   },
   date: {
     type: Date,

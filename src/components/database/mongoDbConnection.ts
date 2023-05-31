@@ -1,15 +1,26 @@
 import mongoose, { ConnectOptions, Mongoose } from "mongoose";
+import winston from 'winston';
+import dotenv from 'dotenv';
+dotenv.config();
 
-const dbURI = "mongodb://127.0.0.1:27017/clg-wizbiz";
+const dbURI = process.env.DB_URI;
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.simple(),
+  transports: [
+    new winston.transports.Console()
+  ]
+});
 
 mongoose.connect(dbURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 } as ConnectOptions)
   .then((mongooseInstance: Mongoose) => {
-    console.log("Connected to MongoDB");
+    logger.info("Connected to MongoDB");
     // Perform any additional operations with mongooseInstance
   })
   .catch((error: Error) => {
-    console.error("Failed to connect to MongoDB", error);
+    logger.error("Failed to connect to MongoDB", error);
   });

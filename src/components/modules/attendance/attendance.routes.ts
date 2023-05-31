@@ -12,4 +12,12 @@ router.post('/staff/attendance', async (req: Request, res: Response) => {
   attendanceController.attendanceReg(req, res);
 });
 
+router.put('/staff/attendance/:date', async(req :Request, res:Response) => {
+  attendanceController.AttendanceUpdate(req,res)
+})
+
+router.get('/attendance/absent', async(req:Request, res:Response) =>{
+  attendanceController.Absent(req, res)
+})
+
 export default router;

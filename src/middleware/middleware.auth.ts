@@ -27,7 +27,7 @@ class Authorization {
       if (!token) {
         throw new Error('No token provided');
       }
-      const decoded = jwt.verify(token, 'Secret-Key') as any;
+      const decoded = jwt.verify(token, 'Staff') as any;
       req.decoded = decoded;
     } catch (e) {
       res.status(401).send('Please Authenticate');

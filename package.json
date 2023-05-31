@@ -21,6 +21,9 @@
   },
   "dependencies": {
     "bcrypt": "^5.1.0",
-    "validator": "^13.9.0"
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.1.1",
+    "validator": "^13.9.0",
+    "winston": "^3.9.0"
   }
 }
