@@ -1,4 +1,3 @@
-import { strictTransportSecurity } from 'helmet';
 import mongoose, { Document, Mongoose, Schema } from 'mongoose';
 
 interface AttendanceDocument extends Document {
