@@ -8,15 +8,15 @@ const authorization: Authorization = new Authorization();
 
 const attendanceController: AttendanceController = new AttendanceController();
 
-router.post('/staff/attendance', async (req: Request, res: Response) => {
+router.post('/staff/attendance', authorization.admin_auth,async (req: Request, res: Response) => {
   attendanceController.attendanceReg(req, res);
 });
 
-router.put('/staff/attendance/:date', async(req :Request, res:Response) => {
+router.put('/staff/attendance/:date', authorization.admin_auth,async(req :Request, res:Response) => {
   attendanceController.attendanceUpdate(req,res)
 })
 
-router.get('/attendance/absent', async(req:Request, res:Response) =>{
+router.get('/attendance/absent', authorization.admin_auth, async(req:Request, res:Response) =>{
   attendanceController.absent(req, res)
 })
 

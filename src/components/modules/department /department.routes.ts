@@ -8,7 +8,7 @@ const authorization: Authorization = new Authorization();
 
 const departmentController: DepartmentController = new DepartmentController();
 
-router.post('/admin/department', async (req: Request, res: Response) => {
+router.post('/admin/department', authorization.admin_auth, async (req: Request, res: Response) => {
     departmentController.departmentReg(req, res);
 });
 

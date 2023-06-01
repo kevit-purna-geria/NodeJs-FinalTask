@@ -23,7 +23,7 @@ class AttendanceController {
   async attendanceUpdate(req: Request, res:Response) {
     try {
       const date = req.params.date.replace(':', '');
-      
+      console.log(1)
       const attendance = await Attendance.findOneAndUpdate({ date: date }, {data : req.body.data});
       
       res.json({ message: 'Attendance Data updated successfully' });

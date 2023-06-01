@@ -22,7 +22,7 @@ class AdminController {
       admin.password = await this.hashPassword(password);
       await admin.save();
 
-      console.log({ admin });
+      
       res.status(201).send('Admin Registered Successfully');
     } catch (e) {
       if (e.code === 11000) {

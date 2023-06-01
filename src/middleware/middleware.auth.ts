@@ -20,21 +20,6 @@ class Authorization {
     }
     next();
   }
-
-  staff_auth(req: AuthenticatedRequest, res: Response, next: NextFunction): void {
-    try {
-      const token = req.header('Authorization')?.replace('Bearer ', '');
-      if (!token) {
-        throw new Error('No token provided');
-      }
-      const decoded = jwt.verify(token, 'Staff') as any;
-      req.decoded = decoded;
-    } catch (e) {
-      res.status(401).send('Please Authenticate');
-      return;
-    }
-    next();
-  }
 }
 
 export default Authorization;

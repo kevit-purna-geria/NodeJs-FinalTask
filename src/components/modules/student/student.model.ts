@@ -7,6 +7,7 @@ interface StudentDocument extends Document {
   department: string;
   Batch: number;
   currentSem: number;
+  attendance : Schema.Types.ObjectId
 }
 
 const studentSchema = new Schema<StudentDocument>({
@@ -36,7 +37,12 @@ const studentSchema = new Schema<StudentDocument>({
     type: Number,
     required: true,
   },
+  attendance: [{
+    type: Schema.Types.ObjectId,
+    ref: "Attendance"
+  }]
 });
+
 
 const Student = mongoose.model<StudentDocument>('Student', studentSchema);
 

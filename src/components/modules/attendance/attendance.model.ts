@@ -1,5 +1,5 @@
 import { strictTransportSecurity } from 'helmet';
-import mongoose, { Document, Schema } from 'mongoose';
+import mongoose, { Document, Mongoose, Schema } from 'mongoose';
 
 interface AttendanceDocument extends Document {
   branch: string;
@@ -28,7 +28,8 @@ const attendanceSchema = new Schema<AttendanceDocument>({
   },
   data: [{
     regNum :{
-        type : String
+        type : Schema.Types.ObjectId,
+        ref : "Student"
     },
     status : {
         type : String
